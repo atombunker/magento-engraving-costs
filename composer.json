@@ -1,0 +1,17 @@
+{
+    "name": "bastiaanh/engraving-costs",
+    "description": "Engraving Costs Extension for Magento",
+    "version": "1.0.0",
+    "type": "magento-module",
+    "homepage": "https://github.com/bastiaanh/EngravingCosts",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "BastiaanH",
+            "homepage": "https://github.com/bastiaanh"
+        }
+    ],
+    "require": {
+        "magento-hackathon/magento-composer-installer": "*"
+    }
+}

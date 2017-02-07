@@ -1,0 +1,5 @@
+app/code/community/BastiaanH/EngravingCosts app/code/community/BastiaanH/EngravingCosts
+app/design/frontend/base/default/layout/bastiaanh/engravingcosts.xml app/design/frontend/base/default/layout/bastiaanh/engravingcosts.xml
+app/etc/modules/BastiaanH_EngravingCosts.xml app/etc/modules/BastiaanH_EngravingCosts.xml
+app/locale/nl_NL/BastiaanH_EngravingCosts.csv app/locale/nl_NL/BastiaanH_EngravingCosts.csv
+js/bastiaanh/engravingcosts.js js/bastiaanh/engravingcosts.js

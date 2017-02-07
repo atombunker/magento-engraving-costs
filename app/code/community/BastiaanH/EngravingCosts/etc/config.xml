@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category  BastiaanH
+ * @package   BastiaanH_EngravingCosts
+ * @copyright Copyright (C) 2017 BastiaanH https://github.com/bastiaanh
+ * @license   https://opensource.org/licenses/mit  MIT License (MIT)
+ */
+-->
+<config>
+    <modules>
+        <BastiaanH_EngravingCosts>
+            <version>1.0.0</version>
+        </BastiaanH_EngravingCosts>
+    </modules>
+    <global>
+        <helpers>
+            <bastiaanh_engravingcosts>
+                <class>BastiaanH_EngravingCosts_Helper</class>
+            </bastiaanh_engravingcosts>
+        </helpers>
+        <blocks>
+            <adminhtml>
+                <rewrite>
+                    <catalog_product_edit_tab_options_option>BastiaanH_EngravingCosts_Block_Adminhtml_Catalog_Product_Edit_Tab_Options_Option</catalog_product_edit_tab_options_option>
+                    <catalog_product_edit_tab_options_type_text>BastiaanH_EngravingCosts_Block_Adminhtml_Catalog_Product_Edit_Tab_Options_Type_Text</catalog_product_edit_tab_options_type_text>
+                </rewrite>
+            </adminhtml>
+            <catalog>
+                <rewrite>
+                    <product_view_options_type_text>BastiaanH_EngravingCosts_Block_Catalog_Product_View_Options_Type_Text</product_view_options_type_text>
+                </rewrite>
+            </catalog>
+        </blocks>
+        <models>
+            <catalog>
+                <rewrite>
+                    <product_option_type_text>BastiaanH_EngravingCosts_Model_Catalog_Product_Option_Type_Text</product_option_type_text>
+                </rewrite>
+            </catalog>
+        </models>
+    </global>
+    <adminhtml>
+        <translate>
+            <modules>
+                <BastiaanH_EngravingCosts>
+                    <files>
+                        <default>BastiaanH_EngravingCosts.csv</default>
+                    </files>
+                </BastiaanH_EngravingCosts>
+            </modules>
+        </translate>
+    </adminhtml>
+    <frontend>
+        <translate>
+            <modules>
+                <BastiaanH_EngravingCosts>
+                    <files>
+                        <default>BastiaanH_EngravingCosts.csv</default>
+                    </files>
+                </BastiaanH_EngravingCosts>
+            </modules>
+        </translate>
+        <layout>
+            <updates>
+                <bastiaanh_engravingcosts>
+                    <file>bastiaanh/engravingcosts.xml</file>
+                </bastiaanh_engravingcosts>
+            </updates>
+        </layout>
+    </frontend>
+</config>

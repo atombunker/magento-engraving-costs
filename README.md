@@ -42,7 +42,9 @@ Once the files are installed:
 - Clear the cache, logout from the admin panel and then login again.
 
 ## Uninstallation
-- Remove all custom options with price type 'perchar'.
+- Make sure there are no more custom options with price type 'perchar':
+
+  `UPDATE catalog_product_option_price SET price_type = 'fixed' WHERE price_type = 'perchar';`
 
 - Remove all extension files from your Magento installation.
 - Via composer:

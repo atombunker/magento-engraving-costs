@@ -13,8 +13,8 @@ class BastiaanH_EngravingCosts_Model_Catalog_Product_Option_Type_Text
     extends Mage_Catalog_Model_Product_Option_Type_Text
 {
     /**
-     * Return Price for selected option
-     * Here the backend price calculation is performed for our 'perchar' price type.
+     * Returns price for selected option. Here the backend price calculation is
+     * performed for our 'perchar' price type.
      *
      * @param string $optionValue Prepared for cart option value
      * @param float $basePrice For percent price type
@@ -24,14 +24,13 @@ class BastiaanH_EngravingCosts_Model_Catalog_Product_Option_Type_Text
     {
         $option = $this->getOption();
 
-        if ($option->getPriceType() == 'perchar') {
+        if ($option->getPriceType() === 'perchar') {
             // get number of characters
             $length = Mage::helper('core/string')->strlen($optionValue);
 
             // multiply number of characters by price
             $result = $option->getPrice() * $length;
-        }
-        else {
+        } else {
             $result = parent::getOptionPrice($optionValue, $basePrice);
         }
 

@@ -13,8 +13,9 @@ class BastiaanH_EngravingCosts_Block_Adminhtml_Catalog_Product_Edit_Tab_Options_
     extends Mage_Adminhtml_Block_Catalog_Product_Edit_Tab_Options_Type_Text
 {
     /**
-     * For the 'text' type, here we add our new price type 'perchar' to the dropdown list.
-     * To add an option to all input types, rewrite the adminhtml/system_config_source_product_options_price model.
+     * For the 'text' type, here we add our new price type 'perchar' to the
+     * dropdown list. To add an option to all input types, rewrite the
+     * adminhtml/system_config_source_product_options_price model.
      *
      * @return $this
      */
@@ -22,11 +23,15 @@ class BastiaanH_EngravingCosts_Block_Adminhtml_Catalog_Product_Edit_Tab_Options_
     {
         parent::_prepareLayout();
 
-        $options = Mage::getSingleton('adminhtml/system_config_source_product_options_price')->toOptionArray();
+        $optionsClass = 'adminhtml/system_config_source_product_options_price';
 
+        /** @var BastiaanH_EngravingCosts_Helper_Data $helper */
+        $helper = $this->helper('bastiaanh_engravingcosts');
+
+        $options = Mage::getSingleton($optionsClass)->toOptionArray();
         $options[] = array(
             'value' => 'perchar',
-            'label' => $this->helper('bastiaanh_engravingcosts')->__('Per Character')
+            'label' => $helper->__('Per Character'),
         );
         $this->getChild('option_price_type')->setOptions($options);
 

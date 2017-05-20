@@ -13,21 +13,22 @@ class BastiaanH_EngravingCosts_Block_Adminhtml_Catalog_Product_Edit_Tab_Options_
     extends Mage_Adminhtml_Block_Catalog_Product_Edit_Tab_Options_Option
 {
     /**
-     * Format price value for use in input field in admin panel.
-     * Here we need to add our 'perchar' price type, else the price field stays empty after saving.
+     * Format price value for use in input field in admin panel. Here we need
+     * to add our 'perchar' price type, else the price field stays empty after
+     * saving.
      *
-     * @param mixed $value
+     * @param mixed  $value
      * @param string $type
      * @return string
      */
     public function getPriceValue($value, $type)
     {
-        if ($type == 'perchar') {
+        if ($type === 'perchar') {
             $result = number_format($value, 2, null, '');
-        }
-        else {
+        } else {
             $result = parent::getPriceValue($value, $type);
         }
+
         return $result;
     }
 }

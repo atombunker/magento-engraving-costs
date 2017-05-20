@@ -13,7 +13,8 @@ class BastiaanH_EngravingCosts_Block_Catalog_Product_View_Options_Type_Text
     extends Mage_Catalog_Block_Product_View_Options_Type_Text
 {
     /**
-     * Make sure the module name stays Mage_Catalog so other translations are loaded correctly.
+     * Make sure the module name stays Mage_Catalog so other translations are
+     * loaded correctly.
      */
     protected function _construct()
     {
@@ -31,16 +32,20 @@ class BastiaanH_EngravingCosts_Block_Catalog_Product_View_Options_Type_Text
         $priceStr = parent::getFormatedPrice();
 
         if ($priceStr !== '') {
-            if ($this->getOption()->getPriceType() == 'perchar') {
-                $suffixText = $this->helper('bastiaanh_engravingcosts')->__(' per character');
+            if ($this->getOption()->getPriceType() === 'perchar') {
+                /** @var BastiaanH_EngravingCosts_Helper_Data $helper */
+                $helper = $this->helper('bastiaanh_engravingcosts');
+
+                $suffixText = $helper->__(' per character');
                 $suffixHtml = '&nbsp;' . $this->escapeHtml($suffixText);
 
                 // add the suffix html before last closing span tag if found
                 $pos = stripos($priceStr, '</span>');
                 if ($pos !== false) {
-                    $priceStr = substr($priceStr, 0, $pos) . $suffixHtml . substr($priceStr, $pos);
-                }
-                else {
+                    $priceStr = substr($priceStr, 0, $pos)
+                                . $suffixHtml
+                                . substr($priceStr, $pos);
+                } else {
                     $priceStr .= $suffixHtml;
                 }
             }
